@@ -16,7 +16,7 @@ from utils import accuracy, sparse_mx_to_torch_sparse_tensor, count_degree, tens
 from torch.utils.tensorboard import SummaryWriter
 
 
-class NRGNN:
+class N2RGNN:
     def __init__(self, args, device):
 
         self.device = device
@@ -481,7 +481,7 @@ class PreEdge(nn.Module):
         self.estimated_weights = None
 
     def get_poten_edge(self, edge_index, features, n_p):
-        # 保留候选边，对应NRGNN中的get_train_edge函数
+        # 保留候选边，对应N2RGNN中的get_train_edge函数
         if n_p == 0:
             return edge_index
 
